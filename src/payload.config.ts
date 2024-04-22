@@ -10,6 +10,7 @@ import { fileURLToPath } from 'url'
 import { Pages } from './collections/Pages'
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
+import { Settings } from './globals/Settings'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -19,6 +20,7 @@ export default buildConfig({
     user: Users.slug,
   },
   collections: [Pages, Users, Media],
+  globals: [Settings],
   editor: lexicalEditor({}),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
