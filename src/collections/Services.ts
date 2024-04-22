@@ -1,5 +1,6 @@
 import {  CollectionConfig } from "payload/types";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
+import { slugField } from '../fields/slug'
 
 export const Services: CollectionConfig = {
   slug: "services",
@@ -29,15 +30,26 @@ export const Services: CollectionConfig = {
       },
     },
     {
-      name: "slug",
-      type: "text",
-      required: true,
-      localized: true,
-      label: {
-        en: 'Slug',
-        nl: 'Slak',
+        name: "subtitle",
+        type: "text",
+        required: true,
+        localized: true,
+        label: {
+          en: 'Subtitle',
+          nl: 'Subtitel',
+        },
       },
-    },
+      slugField(),
+    {
+        name: "summary",
+        type: "textarea",
+        required: true,
+        localized: true,
+        label: {
+          en: 'Summary',
+          nl: 'Summary',
+        },
+      },
     {
       name: "image",
       type: "upload",
@@ -47,6 +59,15 @@ export const Services: CollectionConfig = {
         nl: 'Foto',
       },
     },
+    {
+        name: "icon",
+        type: "upload",
+        relationTo: 'media',
+        label: {
+          en: 'Image',
+          nl: 'Foto',
+        },
+      },
     {
         name: "price",
         type: "text",

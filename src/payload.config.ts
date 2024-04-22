@@ -8,6 +8,7 @@ import { buildConfig } from 'payload/config'
 import { fileURLToPath } from 'url'
 
 import { Pages } from './collections/Pages'
+import { Services } from './collections/Services'
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
 import { Settings } from './globals/Settings'
@@ -19,7 +20,7 @@ export default buildConfig({
   admin: {
     user: Users.slug,
   },
-  collections: [Pages, Users, Media],
+  collections: [Pages, Services, Users, Media],
   globals: [Settings],
   editor: lexicalEditor({}),
   secret: process.env.PAYLOAD_SECRET || '',
@@ -58,7 +59,7 @@ export default buildConfig({
         code: 'nl',
       },
     ],
-    defaultLocale: 'en',
+    defaultLocale: 'nl',
     fallback: true,
   },
 })

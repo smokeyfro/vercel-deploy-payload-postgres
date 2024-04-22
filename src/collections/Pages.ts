@@ -1,6 +1,6 @@
 import {  CollectionConfig } from "payload/types";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
-
+import { slugField } from '../fields/slug'
 export const Pages: CollectionConfig = {
   slug: "pages",
   labels: {
@@ -28,16 +28,7 @@ export const Pages: CollectionConfig = {
         nl: 'Titel',
       },
     },
-    {
-      name: "slug",
-      type: "text",
-      required: true,
-      localized: true,
-      label: {
-        en: 'Slug',
-        nl: 'Slak',
-      },
-    },
+    slugField(),
     {
       name: "image",
       type: "upload",

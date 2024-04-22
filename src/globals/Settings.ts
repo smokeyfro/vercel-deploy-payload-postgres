@@ -67,7 +67,7 @@ export const Settings: GlobalConfig = {
                     localized: true,
                     label: {
                       en: 'Phone',
-                      nl: 'Phone',
+                      nl: 'Telefoonnummer',
                     },
                 },
                 {
@@ -77,7 +77,27 @@ export const Settings: GlobalConfig = {
                     localized: true,
                     label: {
                       en: 'Address',
-                      nl: 'Address',
+                      nl: 'Adres',
+                    },
+                },
+                {
+                    name: "kvk",
+                    type: "text",
+                    required: true,
+                    localized: true,
+                    label: {
+                      en: 'Kvk',
+                      nl: 'Kvk',
+                    },
+                },
+                {
+                    name: "btw_id",
+                    type: "text",
+                    required: true,
+                    localized: true,
+                    label: {
+                      en: 'Btw-id',
+                      nl: 'Btw-id',
                     },
                 },
             ],
