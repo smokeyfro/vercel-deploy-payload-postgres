@@ -7,6 +7,7 @@ import sharp from 'sharp'
 import { buildConfig } from 'payload/config'
 import { fileURLToPath } from 'url'
 
+import { Pages } from './collections/Pages'
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
 
@@ -17,7 +18,7 @@ export default buildConfig({
   admin: {
     user: Users.slug,
   },
-  collections: [Users, Media],
+  collections: [Pages, Users, Media],
   editor: lexicalEditor({}),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
@@ -44,4 +45,18 @@ export default buildConfig({
       },
     }),
   ],
+  localization: {
+    locales: [
+      {
+        label: 'English',
+        code: 'en',
+      },
+      {
+        label: 'Dutch',
+        code: 'nl',
+      },
+    ],
+    defaultLocale: 'en',
+    fallback: true,
+  },
 })
